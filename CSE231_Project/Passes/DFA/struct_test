@@ -1,0 +1,30 @@
+struct test_struct
+{
+    int* p1;
+    char* p2;
+};
+
+int main(){
+    struct test_struct test_object;
+    int a;
+    char b;
+    test_object.p1 = &a;
+    test_object.p2 = &b;
+    return 0;
+}
+
+// %struct.test_struct = type { i32*, i8* }
+
+// ; Function Attrs: noinline norecurse nounwind optnone uwtable
+// define dso_local i32 @main() #0 {
+//   %1 = alloca i32, align 4
+//   %2 = alloca %struct.test_struct, align 8
+//   %3 = alloca i32, align 4
+//   %4 = alloca i8, align 1
+//   store i32 0, i32* %1, align 4
+//   %5 = getelementptr inbounds %struct.test_struct, %struct.test_struct* %2, i32 0, i32 0
+//   store i32* %3, i32** %5, align 8
+//   %6 = getelementptr inbounds %struct.test_struct, %struct.test_struct* %2, i32 0, i32 1
+//   store i8* %4, i8** %6, align 8
+//   ret i32 0
+// }
